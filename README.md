@@ -10,7 +10,7 @@ npm install --save clipboard-vue
 或者引入
 
 ```html
-<script lang="javascript" src="dist/clipboard-vue.min.js"></script>
+<script src="dist/clipboard-vue.min.js"></script>
 ``` 
 
 ## 开始使用
