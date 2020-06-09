@@ -9,8 +9,9 @@
   "keywords": [
     "clipboard-vue",
     "clipboard",
+    "clipboardjs",
     "VUE",
-    "vuejs"
+    "Vuejs"
   ],
   "author": "Mr.YT",
   "license": "ISC",
@@ -25,5 +26,13 @@
   },
   "dependencies": {
     "clipboard": "^2.0.6"
+  },
+  "homepage": "https://github.com/helloyutian/clipboard-vue",
+  "bugs": {
+    "url": "https://github.com/helloyutian/clipboard-vue/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/helloyutian/clipboard-vue.git"
   }
 }
