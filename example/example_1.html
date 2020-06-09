@@ -1,0 +1,52 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>V-Clipboard sample example</title>
+  <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.11/vue.min.js"></script>
+  <script src="../dist/v-clipboard.min.js"></script>
+</head>
+<body>
+  <div id="app">
+    <div class="container">
+      <input type="text" v-model="message">
+      <button type="button" v-copy="message" v-copy:success="copySuccess" v-copy:error="copyError">使用指令复制!</button>
+      <button type="button" @click="copyFuction(message)">使用copyText复制</button>
+    </div>
+  </div>
+
+  <script>
+  Vue.use(VClipboard)
+  new Vue({
+    el: '#app',
+    data: function () {
+      return {
+        message: '复制的内容'
+      }
+    },
+    methods: {
+      // 使用 v-copy 指令复制
+      copySuccess() {
+      // 复制成功回调
+        console.log('copy success')
+      },
+      copyError() {
+      // 复制失败回调
+        console.log('copy error')
+      },
+      
+      // 使用函数的方式复制
+      copyFuction(text) {
+        this.$copyText(text).then(e => {
+        // 复制成功
+          console.log('copy succ!')
+        }).catch(e => {
+        // 复制失败
+          console.log('copy err!')
+        })
+      }
+    }
+  })
+  </script>
+</body>
+</html>
