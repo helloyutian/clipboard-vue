@@ -1,10 +1,11 @@
 const path = require('path')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 module.exports = {
   entry: './src/index.js',
   output: {
-    filename: 'v-clipboard.min.js',
+    filename: 'clipboard-vue.min.js',
     path: path.resolve(__dirname, 'dist')
   },
   mode: 'production',
@@ -24,11 +25,12 @@ module.exports = {
     ]
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new CopyWebpackPlugin({
       patterns: [
         {
           from: './src/index.js',
-          to: 'v-clipboard.js'
+          to: 'clipboard-vue.js'
         }
       ]
     })

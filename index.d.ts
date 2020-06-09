@@ -1,4 +1,4 @@
-declare module 'v-clipboard' {
+declare module 'clipboard-vue' {
   import Vue, { PluginFunction, DirectiveOptions } from 'vue'
   type clipboardFunction = (text: string, container?: object | HTMLElement) => Promise<{
     action: string,

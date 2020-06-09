@@ -1,18 +1,24 @@
 {
-  "name": "v-clipboard",
+  "name": "clipboard-vue",
   "version": "1.0.0",
   "description": "A simple vue2 binding to clipboard.js",
   "main": "./src/index.js",
   "scripts": {
     "start": "webpack --config webpack.config.js"
   },
-  "keywords": ["v-clipboard", "clipboard", "VUE"],
+  "keywords": [
+    "clipboard-vue",
+    "clipboard",
+    "VUE",
+    "vuejs"
+  ],
   "author": "Mr.YT",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.10.2",
     "@babel/preset-env": "^7.10.2",
     "babel-loader": "^8.1.0",
+    "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^6.0.1",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11"

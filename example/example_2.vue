@@ -9,7 +9,7 @@
 </template>
 <script>
   // 组件内使用
-  import { copy, copyText } from 'v-clipboard'
+  import { copy, copyText } from 'clipboard-vue'
   export default {
     name: 'Example',
     data() {

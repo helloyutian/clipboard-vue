@@ -1,10 +1,10 @@
-# v-clipboard
+# clipboard-vue
 
-一个简单的基于`clipboard.js`开发的复制文本`Vuejs`插件
+一个简单的基于`clipboard.js`开发的可以在vue使用的复制文本插件
 
 ## 安装
 
-`npm install --save v-clipboard` 或者引入 `dist/v-clipboard.min.js` 
+`npm install --save clipboard-vue` 或者引入 `dist/clipboard-vue.min.js` 
 
 ## 开始使用
 
@@ -13,7 +13,7 @@
 ```javascript
 // main.js
 import Vue from 'vue'
-import VClipboard from 'v-clipboard'
+import VClipboard from 'clipboard-vue'
 
 Vue.use(VClipboard)
 ```
@@ -22,7 +22,7 @@ Vue.use(VClipboard)
 
 ```javascript
 // component.vue
-import { copy, copyText } from 'v-clipboard'
+import { copy, copyText } from 'clipboard-vue'
 // copy 复制指令
 // copyText 复制函数
 export default {
@@ -50,7 +50,7 @@ export default {
 ```html
 <!-- index.html -->
 <script src="vue.min.js"></script>
-<script src="dist/v-clipboard.min.js"></script>
+<script src="dist/clipboard-vue.min.js"></script>
 <script>
 Vue.use(VClipboard)
 new Vue({
@@ -61,7 +61,7 @@ new Vue({
 
 ## 复制没有特定按钮的文本
 
-您可以使用我们的新方法来做到这一点 this.$copyText。请参阅 [Example](https://helloyutian.github.io/v-clipboard/example/example_1.html)，其中我们将剪贴板指令替换为v-on指令。
+您可以使用我们的新方法来做到这一点 this.$copyText。请参阅 [Example](https://helloyutian.github.io/clipboard-vue/example/example_1.html)，其中我们将剪贴板指令替换为v-on指令。
 
 现代浏览器有一些局限性，例如`window.open`没有用户交互就无法使用。因此，复制内容也有相同的限制！在使用前对其进行测试。确保您没有在任何异步方法中使用此方法。
 
@@ -80,16 +80,8 @@ this.$copyText("Text to copy", container)
 
 ## 例子 1
 
-```html
-<div id="app">
-    <div class="container">
-      <input type="text" v-model="message">
-      <button type="button" v-copy="message" v-copy:success="copySuccess" v-copy:error="copyError">使用指令复制!</button>
-      <button type="button" @click="copyFuction(message)">使用copyText复制</button>
-    </div>
-</div>
-  
-<script>
+```javascript
+// main.js
   Vue.use(VClipboard)
   new Vue({
     el: '#app',
@@ -121,7 +113,6 @@ this.$copyText("Text to copy", container)
       }
     }
   })
-  </script>
 ```
 
 ## 例子 2
@@ -138,7 +129,7 @@ this.$copyText("Text to copy", container)
 </template>
 
 <script>
-  import { copy, copyText } from 'v-clipboard'
+  import { copy, copyText } from 'clipboard-vue'
   export default {
     name: 'Example',
     data() {
