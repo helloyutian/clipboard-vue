@@ -1,6 +1,6 @@
 /*!
- * v-clipboard.js v1.0.0
- * https://github.com/helloyutian/v-clipboard
+ * clipboard-vue.js v1.0.4
+ * https://github.com/helloyutian/clipboard-vue
  * 
  * Licensed © Mr.YT
  */
@@ -69,13 +69,13 @@ export const copyText = (text, container) => {
     document.body.removeChild(btn)
   })
 }
-
-export default VClipboard = {
+const VClipboard = {
   install(Vue) {
     Vue.prototype.$copyText = copyText
     Vue.directive('copy', copy)
   }
 }
+export default VClipboard
 
 if (typeof exports === 'object') {
   module.exports = VClipboard
