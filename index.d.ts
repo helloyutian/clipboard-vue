@@ -15,7 +15,7 @@ declare module 'clipboard-vue' {
   
   export const copy: DirectiveOptions
   export const copyText: clipboardFunction
-  export class VClipboard {
+  export default class VClipboard {
     static install: PluginFunction<never>
   }
 }

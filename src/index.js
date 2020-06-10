@@ -70,7 +70,7 @@ export const copyText = (text, container) => {
   })
 }
 
-export const VClipboard = {
+export default VClipboard = {
   install(Vue) {
     Vue.prototype.$copyText = copyText
     Vue.directive('copy', copy)
