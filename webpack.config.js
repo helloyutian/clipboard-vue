@@ -1,11 +1,15 @@
 const path = require('path')
-const CopyWebpackPlugin = require('copy-webpack-plugin')
+// const CopyWebpackPlugin = require('copy-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const TerserWebpackPlugin = require('terser-webpack-plugin')
 
 module.exports = {
-  entry: './src/index.js',
+  entry: {
+    'clipboard-vue': './src/index.js',
+    'clipboard-vue.min': './src/index.js'
+  },
   output: {
-    filename: 'clipboard-vue.min.js',
+    filename: '[name].js',
     path: path.resolve(__dirname, 'dist')
   },
   mode: 'production',
@@ -24,15 +28,24 @@ module.exports = {
       }
     ]
   },
+  devtool: 'cheap-source-map',
+  optimization: {
+    minimize: true,
+    minimizer: [
+        new TerserWebpackPlugin({
+            include: '/min/'
+        })
+    ]
+  },
   plugins: [
-    new CleanWebpackPlugin(),
-    new CopyWebpackPlugin({
-      patterns: [
-        {
-          from: './src/index.js',
-          to: 'clipboard-vue.js'
-        }
-      ]
-    })
+    new CleanWebpackPlugin()
+    // new CopyWebpackPlugin({
+    //   patterns: [
+    //     {
+    //       from: './src/index.js',
+    //       to: 'clipboard-vue.js'
+    //     }
+    //   ]
+    // })
   ]
 }

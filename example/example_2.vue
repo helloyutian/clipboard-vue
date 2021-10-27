@@ -39,7 +39,8 @@
       
       // 使用函数的方式复制
       copyFuction(text) {
-        this.$copyText(text).then(e => {
+        // 按需引用，如果是全局引用可用 this.$copyText代替
+        copyText(text).then(e => {
         // 复制成功
           console.log('copy succ!')
         }).catch(e => {

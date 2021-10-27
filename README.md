@@ -1,6 +1,6 @@
 # clipboard-vue
 
-一个简单的基于`clipboard.js`开发的可以在vue使用的复制文本插件
+一个简单的基于`clipboard.js`开发的可以在VUE2.x使用的复制文本插件
 
 ## 安装
 
